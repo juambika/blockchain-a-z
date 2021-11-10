@@ -14,3 +14,11 @@ Created on Mon Nov  8 23:28:55 2021
 # 2 - Nos descargamos el Postman para hacer peticiciones de url para la transmisión de datos en https://getpostman.com
 
 # 3 - Importamos las librerias necesarias
+import datetime
+import haslib
+import json
+from flask import Flask, jsonify
+
+#Parte 1 - Crear la Cadena de bloques
+
+#Parte 2 - Minado de un Bloque de la Cadena

@@ -19,6 +19,15 @@ import haslib
 import json
 from flask import Flask, jsonify
 
+#Bloque génesis - Primer bloque de la cadena Blockchain
+#Proof = identificador del bloque
+#Bloque genesis tiene el hash previo igual a 0 en string
+
 #Parte 1 - Crear la Cadena de bloques
+class Blockchain:
+    
+    def __init__(self):     #Constructor del bloque   
+        self.chain = []
+        self.create_block(proof = 1, previous_hash = '0')
 
 #Parte 2 - Minado de un Bloque de la Cadena

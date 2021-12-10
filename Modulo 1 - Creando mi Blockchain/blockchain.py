@@ -30,7 +30,7 @@ class Blockchain:
         self.chain = []
         self.create_block(proof = 1, previous_hash = '0')
         
-    def create_block(self, proof, previous_hash):
+    def create_block(self, proof, previous_hash):  #Creacion de un bloque
         block = {'index': len(self.chain)+1,
                  'timestamp': str(datetime.datetime.now()),
                  'proof': proof,
@@ -39,7 +39,7 @@ class Blockchain:
         self.chain.append(block)
         return block
     
-    def get_previous_block(self):
+    def get_previous_block(self):  #Nos devuelve el último bloque de la cadena
         return self.chain[-1]
     
     

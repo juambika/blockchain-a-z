@@ -42,8 +42,8 @@ class Blockchain:
     def get_previous_block(self):  #Nos devuelve el último bloque de la cadena
         return self.chain[-1]
 
-    #Principio de la criptografía (MUY DIFÍCIL DE RESOLVER, PERO MUY FÁCIL DE VERIFICAR)    Ç
-    def proof_of_work():
+    #Principio de la criptografía (MUY DIFÍCIL DE RESOLVER, PERO MUY FÁCIL DE VERIFICAR)
+    def proof_of_work(self, previous_proof):
     
 
 #Parte 2 - Minado de un Bloque de la Cadena

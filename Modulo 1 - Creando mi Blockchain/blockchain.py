@@ -47,3 +47,5 @@ class Blockchain:
     
 
 #Parte 2 - Minado de un Bloque de la Cadena
+
+#Vamos a empezar ya a ir creando nuestro bloque

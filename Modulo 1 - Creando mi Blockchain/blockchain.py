@@ -80,8 +80,10 @@ class Blockchain:
         return True
             
         
-        
-    
-
-
 #Parte 2 - Minado de un Bloque de la Cadena
+
+#Creación de una aplicación web
+app = Flask(__name__)
+
+#Creación de una blockchain
+blockchain = Blockchain()

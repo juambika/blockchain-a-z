@@ -94,8 +94,14 @@ def mine_block():
     previous_block = blockchain.get_previous_block()
     previous_proof = previous_block['proof']
     proof = blockchain.proof_of_work(previous_proof)
+   
+    #Nos traemos el previous_hash del bloque previo para crear el enlace entre el nuevo bloque y el anterior
     previous_hash = blockchain.hash_block(previous_block)
+    
+    #Hacemos el vínculo entre el bloque actual y el previous hash
     block = blockchain.create_block(proof, previous_hash)
+    
+    #Como es una llamada mediante un proceso de Flash, necesitamos una respuesta del servidor para el postman
     response = {'message' : '¡Enhorabuena, has minado un nuevo bloque!', 
                 'index': block['index'],
                 'timestamp' : block['timestamp'],

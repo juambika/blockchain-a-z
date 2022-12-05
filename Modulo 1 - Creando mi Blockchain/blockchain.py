@@ -59,6 +59,7 @@ class Blockchain:
         encoded_block = json.dumps(block, sort_keys=True).encode()
         return hashlib.sha256(encoded_block).hexdigest()
     
+    #Esta función comprueba si la cadena de bloques que tengamos es válida
     def is_chain_valid(self,chain):
         previous_block = chain[0]
         block_index = 1

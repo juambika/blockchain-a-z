@@ -107,4 +107,4 @@ def mine_block():
                 'timestamp' : block['timestamp'],
                 'proof' : block['proof'],
                 'previous_hash' : block['previous_hash']}
-    return jsonify(response), 200  #Jeisonificamos la respuesta de Python, porque la información viene como un diccionarios
+    return jsonify(response), 200  #Jeisonificamos la respuesta de Python, porque la información viene como un diccionario

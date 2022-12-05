@@ -54,14 +54,31 @@ class Blockchain:
                 new_proof += 1
         return new_proof
     
-    #Devolvemos el hash del bloque en base a los datos que contiene
-    def hash_jb(self,block):
+    #Devolvemos el hash sha256 del bloque que le pasamos como argumento en base a los datos que contiene
+    def hash_block(self,block):
         encoded_block = json.dumps(block, sort_keys=True).encode()
         return hashlib.sha256(encoded_block).hexdigest()
+    
+    def is_chain_valid(self,chain):
+        previous_block = chain[0]
+        block_index = 1
+        while(block_index < len(chain)): #Mientras queden bloques de la cadena
+           block = chain[block_index]
+           if block['previous_hash'] != self.hash_block(previous_block):
+               return False
+           #Ahora obtenemos la prueba del bloque actual y la prueba del bloque previo
+           previous_proof = previous_block['proof'] #El valor de la prueba previa
+           proof = block['proof'] #El valor de la prueba actual
+           hash_operation = hashlib.sha256(str(proof**2 - previous_proof**2).encode()).hexdigest()
+           
+           #Si no se cumple el puzzle criptográfico, entonces hacemos saltar la alarmas
+           if hash_operation[:4] != '0000':
+               return False
+        return True
+            
+        
         
     
 
 
 #Parte 2 - Minado de un Bloque de la Cadena
-
-

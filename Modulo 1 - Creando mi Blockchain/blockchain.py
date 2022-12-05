@@ -55,7 +55,7 @@ class Blockchain:
         return new_proof
     
     #Devolvemos el hash del bloque en base a los datos que contiene
-    def hash(self,block):
+    def hash_jb(self,block):
         encoded_block = json.dumps(block, sort_keys=True).encode()
         return hashlib.sha256(encoded_block).hexdigest()
         

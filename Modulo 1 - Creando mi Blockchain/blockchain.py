@@ -127,4 +127,4 @@ def is_valid():
     return jsonify(response), 200  
 
 # Ejecutar la app
-app.run(host = '0.0.0.0', port = 5000)
+app.run(host = '0.0.0.0', port = 5000) #Con esta url, hacemos que sea públicamente accesible desde cualquier lado del mundo

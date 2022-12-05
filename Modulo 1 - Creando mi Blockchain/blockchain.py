@@ -88,7 +88,7 @@ app = Flask(__name__)
 #Creación de una blockchain
 blockchain = Blockchain()
 
-#Minar un nuevo bloque
+#Minar un nuevo bloque - función de primera llamada creada con webApp creada con Flash en Python
 @app.route('/mine_block', methods=['GET'])
 def mine_block():
     previous_block = blockchain.get_previous_block()
@@ -108,3 +108,9 @@ def mine_block():
                 'proof' : block['proof'],
                 'previous_hash' : block['previous_hash']}
     return jsonify(response), 200  #Jeisonificamos la respuesta de Python, porque la información viene como un diccionario
+
+@app.route('/get_chain', methods=['GET'])
+def get_chain():
+    response = {'chain' : blockchain.chain, 
+                'length' : len(blockchain.chain)}
+    return jsonify(response), 200

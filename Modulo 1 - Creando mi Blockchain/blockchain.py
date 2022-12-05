@@ -74,6 +74,8 @@ class Blockchain:
            #Si no se cumple el puzzle criptográfico, entonces hacemos saltar la alarmas
            if hash_operation[:4] != '0000':
                return False
+           previous_block = block
+           block_index += 1
         return True
             
         

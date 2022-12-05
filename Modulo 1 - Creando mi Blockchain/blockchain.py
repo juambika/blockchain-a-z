@@ -109,8 +109,22 @@ def mine_block():
                 'previous_hash' : block['previous_hash']}
     return jsonify(response), 200  #Jeisonificamos la respuesta de Python, porque la información viene como un diccionario
 
+#Obtenemos un diccionario con dos claves, la primera es toda la cadena y el segundo parametro es su longitud
 @app.route('/get_chain', methods=['GET'])
 def get_chain():
     response = {'chain' : blockchain.chain, 
                 'length' : len(blockchain.chain)}
     return jsonify(response), 200
+
+# Comprobar si la cadena de bloques es válida
+@app.route('/is_valid', methods = ['GET'])
+def is_valid():
+    is_valid = blockchain.is_chain_valid(blockchain.chain)
+    if is_valid:
+        response = {'message' : 'Todo correcto. La cadena de bloques es válida.'}
+    else:
+        response = {'message' : 'Houston, tenemos un problema. La cadena de bloques no es válida.'}
+    return jsonify(response), 200  
+
+# Ejecutar la app
+app.run(host = '0.0.0.0', port = 5000)

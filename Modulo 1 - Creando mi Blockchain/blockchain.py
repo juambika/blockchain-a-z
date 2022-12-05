@@ -103,7 +103,7 @@ def mine_block():
     
     #Como es una llamada mediante un proceso de Flash, necesitamos una respuesta del servidor para el postman
     response = {'message' : '¡Enhorabuena, has minado un nuevo bloque!', 
-                'index': block['index'],
+                'index': block['index'], #Clave del dicionario respuesta con la clave del dicionario del bloque actual
                 'timestamp' : block['timestamp'],
                 'proof' : block['proof'],
                 'previous_hash' : block['previous_hash']}

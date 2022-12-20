@@ -2,7 +2,7 @@
 """
 Created on Mon Nov  8 23:28:55 2021
 
-@author: Juan Bautista Perán Zamora
+@author: Juan Bautista Perán Zamora - Ingeniero Software
 """
 #Modulo 1 - Crear una cadena de bloques - blockchain
 

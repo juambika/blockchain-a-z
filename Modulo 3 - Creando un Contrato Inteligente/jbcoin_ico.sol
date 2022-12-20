@@ -8,7 +8,7 @@ contract jbcoin_ico {
     //Número máximo de JBcoins disponibles para venta
     uint public max_jbcoins  = 1000000;
     
-    //Conversion Rate entre USD y JBcoins
+    //Conversion Rate entre USD y JBcoinss
     uint public usd_to_jbcoins = 1000;    
     
     //Número total de JBcoins compradas por inversores
